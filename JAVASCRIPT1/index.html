@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f9;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 400px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <!-- INTERNAL JAVASCRIPT -->
+    <script>
+        console.log("Hello from Internal JavaScript!");
+
+        // Updated User Info
+        const user = {
+            name: "Tejasvi Kolhe",
+            prn: "24070521128"
+        };
+
+        // Function to populate user info on the page
+        function displayUserInfo() {
+            document.getElementById("user-name").innerText = user.name;
+            document.getElementById("user-prn").innerText = user.prn;
+            
+            console.info("User details successfully loaded.");
+            console.table(user); // Beautifully displays Tejasvi's data in the console
+        }
+
+        // Run the function after the window loads
+        window.onload = displayUserInfo;
+    </script>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Welcome Message / Greeting -->
+        <h1 id="welcome-msg">Welcome to the Portal!</h1>
+        <hr>
+        <h3>User Profile</h3>
+        <p><strong>Name:</strong> <span id="user-name">Loading...</span></p>
+        <p><strong>PRN:</strong> <span id="user-prn">Loading...</span></p>
+        
+        <!-- INLINE JAVASCRIPT -->
+        <button onclick="alert('Inline JS: Hello Tejasvi!'); console.warn('User checked status.');">
+            Check Status Quickly
+        </button>
+    </div>
+
+    <!-- EXTERNAL JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
